@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    <h1>база данных</h1>
+{% endblock %}
+
+
+{% block content %}
+    <div class="features">
+        <h1>база данных</h1>
+        {% for el in moneys %}
+            <div class="alert alert-warning"></div>
+                <h3>{{ el.Image }}</h3>
+                <p>{{ el.Title }}</p>
+            </div>
+        {% endfor %}
+        <p>база данных</p>
+    </div>
+{% endblock %}

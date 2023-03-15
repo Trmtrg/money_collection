@@ -1,0 +1,69 @@
+/* То, что позади всего */
+body{
+    background-image: url(../images/1234.png);
+    background-repeat: no-repeat;
+}
+
+/* Боковая панель */
+aside {
+    float: left;
+    background: #dcdcdc;
+    width: 18%;
+    padding: 1%;
+    height: 100vh;
+    color: #fff;
+    border-right: 4px solid #c0c0c0;
+    display: block;
+}
+
+/* Надпись "Навигация" */
+aside h3 {
+    background: -webkit-linear-gradient(#FFFF00, #FFFDD0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: cursive;
+    font-size: 40px;
+    text-align: center;
+    color: #000;
+    margin-top: 13px;
+}
+
+/* Ссылки */
+aside li {
+    font-family: cursive;
+    color: #696969;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    display: inline-block;
+    margin-left: 30px;
+    margin-top: 40px;
+    float: left;
+    text-align: center;
+}
+
+/* Надпись "Коллекция монет" */
+aside span {
+    font-size: 28px;
+    text-align: center;
+    color: #141619;
+}
+
+/* Расширение ссылок */
+aside ul li:hover, aside ul a:hover {
+    transform: scale(1.05);
+    outline: none;
+    text-decoration: none;
+    color: #FFFDD0
+}
+
+/* штука чтобы ссылки не подчеркивались outline крч */
+aside a{
+    text-decoration: none;
+}
+
+aside h5{
+    font-size: 8px;
+    text-align: left;
+    margin-top: 660px;
+}
