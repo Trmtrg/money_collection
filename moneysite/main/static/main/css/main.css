@@ -67,3 +67,11 @@ aside h5{
     text-align: left;
     margin-top: 660px;
 }
+
+.features {
+    float: left;
+    color: #000;
+    margin-top: 100px;
+    text-align: center;
+    width: 75%;
+}

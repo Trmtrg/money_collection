@@ -8,12 +8,13 @@
 {% block content %}
     <div class="features">
         <h1>база данных</h1>
+
         {% for el in moneys %}
-            <div class="alert alert-warning"></div>
-                <h3>{{ el.Image }}</h3>
-                <p>{{ el.Title }}</p>
+            <div class="alert alert-warning">
+                <p>{{ el.Image }}</p>
+                <h3>{{ el.Title }}</h3>
             </div>
         {% endfor %}
-        <p>база данных</p>
+
     </div>
 {% endblock %}
