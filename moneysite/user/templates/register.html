@@ -1,0 +1,35 @@
+{# фронт написать бы #}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+</head>
+<body>
+    <h3>Регистрация</h3>
+    <form method="POST" action="">
+
+{# и токен в форму засунь #}
+
+        {% csrf_token %}
+
+{# используй эти импуты для фронта #}
+
+        {{ form.username.label }}
+        {{ form.username }}
+
+        {{ form.email.label }}
+        {{ form.email }}
+
+        {{ form.password1.label }}
+        {{ form.password1 }}
+
+        {{ form.password2.label }}
+        {{ form.password2 }}
+
+        <input type="submit" name="Create User">
+    </form>
+    {{ form.errors }}
+    <a href="{% url 'login' %}">Вход</a>
+</body>
+</html>
