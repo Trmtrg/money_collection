@@ -80,12 +80,7 @@ aside a{
     text-decoration: none;
 }
 
-aside h5{
-    font-size: 8px;
-    text-align: left;
-    margin-top: 660px;
-}
-
+/* просто фьючерз */
 .features {
     float: left;
     color: #000;
