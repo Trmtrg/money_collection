@@ -41,6 +41,7 @@ aside li {
     text-align: center;
 }
 
+/* Кнопки "Войти" и "Выйти" */
 aside ol {
     font-family: cursive;
     color: #696969;
@@ -58,6 +59,7 @@ aside span {
     color: #141619;
 }
 
+/* Расширение кнопок "Войти" и "Выйти" */
 aside ul ol:hover, aside ul a:hover {
     transform: scale(1.05);
     outline: none;
@@ -90,4 +92,20 @@ aside h5{
     margin-top: 100px;
     text-align: center;
     width: 75%;
+}
+
+/* Картинка на /moneys */
+p{
+    float:left;
+    width: 100px 100px;
+}
+
+/* Изображение перед "Монеты" в aside */
+li svg{
+    width: 21px;
+}
+
+/* Изображения перед "Главная" и "Контакты" в aside */
+li i{
+    width: 21px;
 }
