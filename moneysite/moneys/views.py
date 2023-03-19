@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Article
 from .forms import ArticleForm
 from django.views.generic import DetailView
@@ -15,10 +15,19 @@ class NewsDetailView(DetailView):
 
 
 def create(request):
+    error = ''
+    if request.method == 'POST':
+        form = ArticleForm(request.POST)
+        if form.is_volid():
+            form.save()
+            return redirect('home')
+        else:
+            error = 'Форма была неверно заполнена'
     form = ArticleForm()
 
     data = {
-        'form': form
+        'form': form,
+        'error': error
     }
 
     return render(request, 'moneys/create.html', data)
