@@ -90,12 +90,17 @@ aside a{
     width: 75%;
 }
 
-/* Картинка на /moneys */
+/* /moneys */
 p{
     float:left;
-    width: 100px 100px;
+    width: 50px 50px;
 }
 
+/* Картинки */
+p img{
+    float: left;
+    width: 50%;
+}
 /* Изображение перед "Монеты" в aside */
 li svg{
     width: 21px;
@@ -112,3 +117,8 @@ h1{
     font-family: cursive;
 }
 
+h3{
+    font-size: 25px;
+    margin-top: -5px;
+    margin-left: 10px;
+}
