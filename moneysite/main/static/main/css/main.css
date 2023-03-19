@@ -18,7 +18,7 @@ aside {
 
 /* Надпись "Навигация" */
 aside h3 {
-    background: -webkit-linear-gradient(#FFFF00, #FFFDD0);
+    background: -webkit-linear-gradient(#ffb300, #141619);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: cursive;
@@ -54,9 +54,10 @@ aside ol {
 
 /* Надпись "Коллекция монет" */
 aside span {
-    font-size: 28px;
+    font-size: 26px;
     text-align: center;
     color: #141619;
+    font-family: cursive;
 }
 
 /* Расширение кнопок "Войти" и "Выйти" */
@@ -104,3 +105,10 @@ li svg{
 li i{
     width: 21px;
 }
+
+/* Главная надпись на страницах */
+h1{
+    margin-top: -65px;
+    font-family: cursive;
+}
+
