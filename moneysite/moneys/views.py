@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
+from django.views.generic import DetailView
+
 from .models import Article
 from .forms import ArticleForm
-from django.views.generic import DetailView
 
 def moneys_home(request):
     moneys = Article.objects.all()
@@ -16,14 +17,15 @@ class NewsDetailView(DetailView):
 
 def create(request):
     error = ''
+    form = ArticleForm()
+
     if request.method == 'POST':
-        form = ArticleForm(request.POST)
-        if form.is_volid():
+        form = ArticleForm(request.POST, request.FILES)
+        if form.is_valid():
             form.save()
             return redirect('home')
         else:
             error = 'Форма была неверно заполнена'
-    form = ArticleForm()
 
     data = {
         'form': form,
