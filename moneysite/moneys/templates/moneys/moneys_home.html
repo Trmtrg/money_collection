@@ -13,6 +13,7 @@
             <div class="alert alert-warning">
                 <p><img class="img-article-left thumb" src="{{ el.Image.url }}"></p>
                 <h3>{{ el.Title }}</h3>
+                <a href="{% url 'moneys-detail' el.id %}" class="btn btn-warning">Смотреть</a>
             </div>
         {% endfor %}
 
