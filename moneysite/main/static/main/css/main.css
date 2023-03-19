@@ -35,11 +35,20 @@ aside li {
     text-decoration: none;
     list-style: none;
     outline: none;
-    display: inline-block;
-    margin-left: 30px;
-    margin-top: 40px;
-    float: left;
+    display: block;
+    margin-left: -45px;
+    margin-top: 30px;
     text-align: center;
+}
+
+aside ol {
+    font-family: cursive;
+    color: #696969;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    margin-top: 10px;
+    margin-left: -70px;
 }
 
 /* Надпись "Коллекция монет" */
@@ -47,6 +56,13 @@ aside span {
     font-size: 28px;
     text-align: center;
     color: #141619;
+}
+
+aside ul ol:hover, aside ul a:hover {
+    transform: scale(1.05);
+    outline: none;
+    text-decoration: none;
+    color: #FFFDD0
 }
 
 /* Расширение ссылок */
