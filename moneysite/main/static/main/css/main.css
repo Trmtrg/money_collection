@@ -48,8 +48,8 @@ aside ol {
     text-decoration: none;
     list-style: none;
     outline: none;
-    margin-top: 20px;
-    margin-left: -68px;
+    margin-top: 23px;
+    margin-left: 4px;
     font-size: 20px;
 }
 
@@ -104,7 +104,8 @@ p img{
 }
 /* Изображение перед "Монеты" в aside */
 li svg{
-    width: 21px;
+    width: 18px;
+    margin-top: -3.5px;
 }
 
 /* Изображения перед "Главная" и "Контакты" в aside */
@@ -128,4 +129,17 @@ h3{
 
 aside ul span{
     margin-left: -14px;
+}
+
+/* Хуйня где монеты смотреть */
+h2{
+    text-align: center;
+    font-family: cursive;
+}
+
+/* Дверь перед "Выйти" в aside */
+ol svg{
+    width: 16px;
+    height: 20px;
+    margin-top: -4px;
 }
