@@ -23,9 +23,9 @@ aside h3 {
     -webkit-text-fill-color: transparent;
     font-family: cursive;
     font-size: 40px;
-    text-align: center;
     color: #000;
-    margin-top: 13px;
+    margin-top: 2px;
+    margin-left: 7px;
 }
 
 /* Ссылки */
@@ -48,8 +48,9 @@ aside ol {
     text-decoration: none;
     list-style: none;
     outline: none;
-    margin-top: 10px;
-    margin-left: -70px;
+    margin-top: 20px;
+    margin-left: -68px;
+    font-size: 20px;
 }
 
 /* Надпись "Коллекция монет" */
@@ -99,7 +100,7 @@ p{
 /* Картинки */
 p img{
     float: left;
-    width: 50%;
+    width: 40%;
 }
 /* Изображение перед "Монеты" в aside */
 li svg{
@@ -117,8 +118,14 @@ h1{
     font-family: cursive;
 }
 
+/* Описание монет в базе данных */
 h3{
     font-size: 25px;
     margin-top: -5px;
     margin-left: 10px;
+    font-family: cursive;
+}
+
+aside ul span{
+    margin-left: -14px;
 }
