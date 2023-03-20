@@ -16,6 +16,7 @@
         <span class="logo">Коллекция монет</span>
         <h3>Навигация</h3>
         <ul>
+            <span>Привет, {{ request.user }}</span>
             <a href="{% url 'home' %}"><li><i class="fa-solid fa-house"></i>Главная</li></a>
             <a href="{% url 'about' %}"><li><i class="fa-regular fa-address-card"></i>Контакты</li></a>
             <a href="{% url 'moneys_home' %}"><li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
@@ -25,8 +26,11 @@
 </svg></i>Монеты</li></a>
             <a href="{% url 'register' %}"><li>Регистрация</li></a>
             <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Добавить запись</button>></li></a>
-            <a href="{% url 'login' %}"><ol>Войти</ol></a>
-            <a href="{% url 'logout' %}"><ol>Выйти</ol></a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}"><ol>Выйти</ol></a>
+            {% else %}
+                <a href="{% url 'login' %}"><ol>Войти</ol></a>
+            {% endif %}
         </ul>
     </aside>
     <main>

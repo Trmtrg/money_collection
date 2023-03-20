@@ -31,8 +31,9 @@ def login_page(request):
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
-            login(request, user)
-            return redirect('home')
+            if user.is_active:
+                login(request, user)
+                return redirect('home')
         else:
             messages.info(request, 'Имя пользователя или пароль введены неправильно')
     context = {}
