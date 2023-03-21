@@ -1,12 +1,25 @@
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import Article
 from .forms import ArticleForm
 
+
 def moneys_home(request):
     moneys = Article.objects.all()
-    return render(request, 'moneys/moneys_home.html', {'moneys': moneys})
+
+    p = Paginator(Article.objects.all(), 2)
+    page = request.GET.get('page')
+
+    try:
+        articles = p.page(page)
+    except PageNotAnInteger:
+        articles = p.page(1)
+    except EmptyPage:
+        articles = p.page(p.num_pages)
+
+    return render(request, 'moneys/moneys_home.html', {'moneys': moneys, 'articles':articles})
 
 
 class NewsDetailView(DetailView):
