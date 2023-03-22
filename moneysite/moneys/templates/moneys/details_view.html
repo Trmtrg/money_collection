@@ -8,7 +8,7 @@
 {% block content %}
     <div>
         <h2>Здесь когда-нибудь будет инфа о монетах</h2>
-        <a href="{% url 'moneys-delete' article.id%}" class="btn btn-danger">Удалить</a>
-        <a href="{% url 'moneys-update' article.id%}" class="btn btn-info">Редактировать</a>
+        <a href="{% url 'moneys-delete' Article.id %}" class="btn btn-danger">Удалить</a>
+        <a href="{% url 'moneys-update' Article.id %}" class="btn btn-info">Редактировать</a>
     </div>
 {% endblock %}

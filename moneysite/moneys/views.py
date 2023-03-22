@@ -31,7 +31,7 @@ class NewsUpdateView(UpdateView):
 
 class NewsDeleteView(DetailView):
     model = Article
-    success_url = '/news/'
+    success_url = '/moneys/moneys_home'
     template_name = 'moneys/moneys-delete.html'
 
 
