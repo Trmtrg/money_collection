@@ -11,6 +11,3 @@ def about(request):
 
 def details_view(request):
     return render(request, 'moneys/moneys/details_view.html')
-
-
-
