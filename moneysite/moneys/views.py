@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import DetailView
+from django.views.generic import DetailView, UpdateView, DeleteView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import Article
@@ -20,6 +20,18 @@ def moneys_home(request):
         articles = p.page(p.num_pages)
 
     return render(request, 'moneys/moneys_home.html', {'moneys': moneys, 'articles':articles})
+
+
+class NewsUpdateView(UpdateView):
+    model = Article
+    template_name = 'moneys/create.html'
+    form_class = ArticleForm
+
+
+class NewsDeleteView(DetailView):
+    model = Article
+    success_url = '/news/'
+    template_name = 'moneys/moneys-delete.html'
 
 
 class NewsDetailView(DetailView):
