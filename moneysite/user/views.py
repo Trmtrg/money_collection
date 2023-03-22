@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
-
 from .forms import CreateUserForm
 
 
@@ -20,7 +19,6 @@ def register_page(request):
 
     context = {'form':form}
     return render(request, 'register.html', context)
-
 
 def login_page(request):
 
@@ -42,3 +40,5 @@ def login_page(request):
 def LogoutUser(request):
     logout(request)
     return redirect('home')
+
+
