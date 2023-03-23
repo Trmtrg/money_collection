@@ -1,35 +1,32 @@
-{# фронт написать бы #}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Регистрация</title>
 </head>
-<body>
-    <h3>Регистрация</h3>
-    <form method="POST" action="">
+<body style="background-color: #E1E17F">
+    {% block content %}
+<form method="POST" novalidate>
+	{% csrf_token %}
+	<h2>Регистрация</h2>
 
-{# и токен в форму засунь #}
-
-        {% csrf_token %}
-
-{# используй эти импуты для фронта #}
-
-        {{ form.username.label }}
-        {{ form.username }}
-
-        {{ form.email.label }}
-        {{ form.email }}
-
-        {{ form.password1.label }}
-        {{ form.password1 }}
-
-        {{ form.password2.label }}
-        {{ form.password2 }}
-
-        <input type="submit" name="Create User">
-    </form>
+	{% for field in form %}
+	<p>
+		{% if field.errors %}
+		<ul class="errorlist">
+			{% for error in field.errors %}
+			<li>{{ error }}</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	 	{{ field.label_tag }} {{ field }}
+	</p>
+	{% endfor %}
+	<input type="submit" value="Регистрация" />
     {{ form.errors }}
     <a href="{% url 'login' %}">Вход</a>
+</form>
+{% endblock content%}
+
 </body>
 </html>
