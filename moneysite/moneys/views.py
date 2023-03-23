@@ -10,7 +10,7 @@ from .forms import ArticleForm
 def moneys_home(request):
     moneys = Article.objects.all()
 
-    p = Paginator(Article.objects.all(), 2)
+    p = Paginator(Article.objects.all(), 3)
     page = request.GET.get('page')
 
     try:
