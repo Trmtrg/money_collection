@@ -188,3 +188,7 @@ div a{
 .btn-warning {
     margin-top: 25px;
 }
+
+tr {
+    margin-left: 20px;
+}

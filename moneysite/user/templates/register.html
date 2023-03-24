@@ -8,23 +8,25 @@
     {% block content %}
 <form method="POST" novalidate>
 	{% csrf_token %}
-	<h2>Регистрация</h2>
+	<h2 style="font-size: 20px; text-align: center; margin-top: 250px">Регистрация</h2>
 
 	{% for field in form %}
-	<p>
-		{% if field.errors %}
-		<ul class="errorlist">
-			{% for error in field.errors %}
-			<li>{{ error }}</li>
-			{% endfor %}
-		</ul>
-		{% endif %}
-	 	{{ field.label_tag }} {{ field }}
-	</p>
-	{% endfor %}
-	<input type="submit" value="Регистрация" style="font-family: cursive"/>
-    {{ form.errors }}
-    <a href="{% url 'login' %}" style="font-family: cursive">Вход</a>
+	<div style="text-align: center">
+		<p>
+			{% if field.errors %}
+			<ul class="errorlist">
+				{% for error in field.errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+			{{ field.label_tag }} {{ field }}
+		</p>
+		{% endfor %}
+		<input type="submit" value="Регистрация" style="font-family: cursive"/>
+		{{ form.errors }}
+		<a href="{% url 'login' %}" style="font-family: cursive">Вход</a>
+	</div>
 </form>
 {% endblock content%}
 

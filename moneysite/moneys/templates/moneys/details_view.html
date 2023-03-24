@@ -6,9 +6,19 @@
 
 
 {% block content %}
-    <div>
+    <div style="margin-left: 500px">
         <h2>Здесь когда-нибудь будет инфа о монетах</h2>
-        <a href="{% url 'moneys-delete' Article.id %}" class="btn btn-danger">Удалить</a>
-        <a href="{% url 'moneys-update' Article.id %}" class="btn btn-info">Редактировать</a>
+        <tr>
+             <th scope="col">Название {moneys}</th> <br>
+             <th scope="col">Фото 1</th>
+             <th scope="col">Фото 2</th> <br>
+             <th scope="col">Страна</th> <br>
+             <th scope="col">Металл</th> <br>
+             <th scope="col">Год выпуска</th> <br>
+             <th scope="col">Номинал</th> <br>
+             <th scope="col">Описание</th> <br>
+         </tr>
+        <a href="{% url 'moneys-delete' Article.id %}" class="btn btn-danger" style="margin-top: 150px;">Удалить</a>
+        <a href="{% url 'moneys-update' Article.id %}" class="btn btn-info" style="margin-top: 150px">Редактировать</a>
     </div>
 {% endblock %}
