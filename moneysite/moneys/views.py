@@ -60,3 +60,4 @@ def create(request):
     }
 
     return render(request, 'moneys/create.html', data)
+
