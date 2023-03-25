@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Точно хочешь удалить??☺</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <p>Хочешь удалить "{{ object }}"?</p>
+        <input type="submit" value="ХОЧУ" />
+    </form>
+</body>
+</html>
