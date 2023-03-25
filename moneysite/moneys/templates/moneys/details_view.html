@@ -20,8 +20,8 @@
                     <td>{{ Article.Title }}</td>
                 </tr>
                 <tr>
-                    <td>Фото 1: {{ Article.Image }}</td>
-                    <td>Фото 2: {{ Article.Image_two }}</td>
+                    <td>Фото 1: <img src="{{ Article.Image.url }}" height="250"></td>
+                    <td>Фото 2: <img src="{{ Article.Image_two.url }}" height="250"></td>
                 </tr>
                 <tr>
                     <td>Страна:</td>
