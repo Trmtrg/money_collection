@@ -24,8 +24,9 @@
             ...
         {% endif %}
 <!--        Кнопки предыдущей, отображение нынешней и кнопка следующей-->
-        {% if articles.number == 1 %}
+        {% if articles.paginator.num_pages == 1 %}
             {{ articles.number }}
+        {% elif articles.number == 1 %}
             <a href="?page={{ articles.next_page_number }}">{{ articles.next_page_number }}</a>
         {% elif articles.number == articles.paginator.num_pages %}
             <a href="?page={{ articles.previous_page_number }}">{{ articles.previous_page_number }}</a>

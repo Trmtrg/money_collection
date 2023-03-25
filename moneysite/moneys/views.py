@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect
-from django.views.generic import DetailView, UpdateView, DeleteView
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import permission_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.shortcuts import render, redirect
+from django.views.generic import DetailView, UpdateView
 
-from .models import Article
 from .forms import ArticleForm
+from .models import Article
 
 
 def moneys_home(request):

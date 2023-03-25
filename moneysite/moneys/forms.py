@@ -1,6 +1,7 @@
-from .models import Article
 from django.forms import ModelForm, TextInput, FileInput, NumberInput
-from django.db.models import ImageField
+
+from .models import Article
+
 
 class ArticleForm(ModelForm):
     class Meta:
