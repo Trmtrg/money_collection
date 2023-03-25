@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>ВХОД</title>
@@ -20,12 +20,12 @@
             placeholder="Пароль" class="form-control"
             style="font-size: 15px;">
             </p>
-            <input type="submit" name="login" style="font-family: cursive; font-size: 12px">
-            <a href="{% url 'register' %}" style="font-family: cursive">Регистрация</a>
+            <button name="login" style="font-family: cursive; font-size: 12px">Войти</button>
+            <button formaction="{% url 'register' %}" style="font-family: cursive; font-size: 12px">Страница регистрации</button>
+            {% for message in messages %}
+                <p id="messages">{{ message }}</p>
+            {% endfor %}
         </div>
     </form>
 {% endblock content%}
-    {% for message in messages %}
-        <p id="messages">{{ message }}</p>
-    {% endfor %}
 </body>

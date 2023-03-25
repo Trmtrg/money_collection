@@ -1,31 +1,37 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Регистрация</title>
 </head>
 <body style="background-color: #E1E17F">
-    {% block content %}
+{% block content %}
 <form method="POST" novalidate>
-	{% csrf_token %}
 	<h2 style="font-size: 20px; text-align: center; margin-top: 250px">Регистрация</h2>
-
-	{% for field in form %}
 	<div style="text-align: center">
-		<p>
-			{% if field.errors %}
-			<ul class="errorlist">
-				{% for error in field.errors %}
-				<li>{{ error }}</li>
-				{% endfor %}
-			</ul>
-			{% endif %}
-			{{ field.label_tag }} {{ field }}
-		</p>
-		{% endfor %}
-		<input type="submit" value="Регистрация" style="font-family: cursive"/>
-		{{ form.errors }}
-		<a href="{% url 'login' %}" style="font-family: cursive">Вход</a>
+<!--Таблица чтобы ты понял где тэги писать-->
+		<table align="center">
+			{% for field in form %}
+				{% csrf_token %}
+				<tr>
+<!--			Название поля-->
+					<td align="left">{{ field.label_tag }}</td>
+<!--			Поле с вводом-->
+					<td>{{ field }}</td>
+<!--			Поле ошибки-->
+					{% if field.errors %}
+						<ul class="errorlist">
+							{% for error in field.errors %}
+								<td><li>{{ error }}</li></td>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				</tr>
+			{% endfor %}
+		</table><br>
+			<button style="font-family: cursive; font-size: 12px">Зарегистрироваться</button>
+			<button formaction="{% url 'login' %}" style="font-family: cursive; font-size: 12px">Страница входа</button>
+
 	</div>
 </form>
 {% endblock content%}
