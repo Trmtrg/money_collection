@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import permission_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, redirect
-from django.views.generic import DetailView, UpdateView
+from django.views.generic import DetailView, UpdateView, DeleteView
 
 from .forms import ArticleForm
 from .models import Article
@@ -27,11 +27,12 @@ class NewsUpdateView(UpdateView):
     model = Article
     template_name = 'moneys/create.html'
     form_class = ArticleForm
+    success_url = '..'
 
 
-class NewsDeleteView(DetailView):
+class NewsDeleteView(DeleteView):
     model = Article
-    success_url = '/moneys/moneys_home'
+    success_url = '/moneys/'
     template_name = 'moneys/moneys-delete.html'
 
 
