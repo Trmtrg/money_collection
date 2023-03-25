@@ -1,11 +1,11 @@
-{% extends 'main/layout.html' %}
+    {% extends 'main/layout.html' %}
 
 {% block title %}Форма добавления записей{% endblock %}
 
 {% block content %}
     <div class="features">
         <h1>Форма добавления записей</h1>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.Title }}<br>
             {{ form.Image }}<br>
@@ -15,14 +15,7 @@
             {{ form.Year }}<br>
             {{ form.Nominal }}<br>
             {{ form.Text }}<br>
-<!--            <input type="text" placeholder="Наименование монеты" class="form-control"><br>-->
-<!--            <input type="image" placeholder="Фото лицевой стороны монеты" class="form-control"><br>-->
-<!--            <input type="image" placeholder="Фото обратной стороны монеты" class="form-control"><br>-->
-<!--            <input type="text" placeholder="Страна" class="form-control"><br>-->
-<!--            <input type="text" placeholder="Металл" class="form-control"><br>-->
-<!--            <input type="number" placeholder="Год выпуска монеты" class="form-control"><br>-->
-<!--            <input type="number" placeholder="Номинал" class="form-control"><br>-->
-<!--            <textarea class="form-control"></textarea><br>-->
+            <span>{{ error }}</span>
             <button class="btn btn-success" type="submit">Добавить</button>
         </form>
 

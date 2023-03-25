@@ -1,6 +1,6 @@
 /* То, что позади всего */
 body{
-    background-image: url(../images/1234.png);
+    background-image: url(../images/2.jpg);
     background-repeat: no-repeat;
 }
 
@@ -18,14 +18,14 @@ aside {
 
 /* Надпись "Навигация" */
 aside h3 {
-    background: -webkit-linear-gradient(#FFFF00, #FFFDD0);
+    background: -webkit-linear-gradient(#ffb300, #141619);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: cursive;
     font-size: 40px;
-    text-align: center;
     color: #000;
-    margin-top: 13px;
+    margin-top: 2px;
+    margin-left: 7px;
 }
 
 /* Ссылки */
@@ -41,23 +41,27 @@ aside li {
     text-align: center;
 }
 
+/* Кнопки "Войти" и "Выйти" */
 aside ol {
     font-family: cursive;
     color: #696969;
     text-decoration: none;
     list-style: none;
     outline: none;
-    margin-top: 10px;
-    margin-left: -70px;
+    margin-top: 23px;
+    margin-left: 4px;
+    font-size: 20px;
 }
 
 /* Надпись "Коллекция монет" */
 aside span {
-    font-size: 28px;
+    font-size: 26px;
     text-align: center;
     color: #141619;
+    font-family: cursive;
 }
 
+/* Расширение кнопок "Войти" и "Выйти" */
 aside ul ol:hover, aside ul a:hover {
     transform: scale(1.05);
     outline: none;
@@ -78,16 +82,113 @@ aside a{
     text-decoration: none;
 }
 
-aside h5{
-    font-size: 8px;
-    text-align: left;
-    margin-top: 660px;
-}
-
+/* просто фьючерз */
 .features {
     float: left;
     color: #000;
     margin-top: 100px;
     text-align: center;
     width: 75%;
+}
+
+/* /moneys */
+div p{
+    float:left;
+    width: 50px 50px;
+}
+
+/* Картинки */
+p img{
+    float: center;
+    height: 160px;
+    width: 200px;
+    margin-top: -17px;
+    margin-left: 90px;
+}
+/* Изображение перед "Монеты" в aside */
+li svg{
+    width: 18px;
+    margin-top: -3.5px;
+}
+
+/* Изображения перед "Главная" и "Контакты" в aside */
+li i{
+    width: 21px;
+}
+
+/* Главная надпись на страницах */
+h1{
+    margin-top: -65px;
+    font-family: cursive;
+    text-align: left;
+    margin-left: -10px;
+}
+
+/* Описание монет в базе данных */
+h3{
+    font-size: 25px;
+    margin-top: -5px;
+    margin-left: 10px;
+    font-family: cursive;
+}
+
+aside ul span{
+    margin-left: -14px;
+}
+
+/* Хуйня где монеты смотреть */
+h2{
+    text-align: center;
+    font-family: cursive;
+}
+
+/* Дверь перед "Выйти" в aside */
+ol svg{
+    width: 16px;
+    height: 20px;
+    margin-top: -4px;
+}
+
+div{
+    margin-top: 0px;
+    margin-left: 90px;
+    padding: 5px;
+    height: 160px;
+    width: 700px;
+    margin-left: 40px;
+}
+
+.alert-warning{
+    --bs-alert-color: #000;
+    --bs-alert-bg: #E9E985;
+    margin-left: -30px;
+    margin-top: 20px;
+}
+
+a{
+    color: #ffc107;
+}
+
+div h1{
+    margin-left: -40px;
+    margin-top: -80px;
+}
+
+h5 {
+    font-size: 50px;
+    margin-top: -80px;
+    margin-left: -40px;
+    font-family: cursive;
+}
+
+div a{
+    margin-left: 5px;
+}
+
+.btn-warning {
+    margin-top: 25px;
+}
+
+tr {
+    margin-left: 20px;
 }

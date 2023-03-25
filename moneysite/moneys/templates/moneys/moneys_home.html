@@ -7,14 +7,38 @@
 
 {% block content %}
     <div class="features">
-        <h1>база данных</h1>
+        <h5>База данных</h5>
 
-        {% for el in moneys %}
+        {% for el in articles %}
             <div class="alert alert-warning">
                 <p><img class="img-article-left thumb" src="{{ el.Image.url }}"></p>
                 <h3>{{ el.Title }}</h3>
+                <a href="{% url 'moneys-detail' el.id %}" class="btn btn-warning">Смотреть</a>
             </div>
         {% endfor %}
+        <br><br>
 
+<!--        Кнопка начальной страницы-->
+        {% if articles.number != 1 and articles.previous_page_number != 1 %}
+            <a href="?page=1">1</a>
+            ...
+        {% endif %}
+<!--        Кнопки предыдущей, отображение нынешней и кнопка следующей-->
+        {% if articles.number == 1 %}
+            {{ articles.number }}
+            <a href="?page={{ articles.next_page_number }}">{{ articles.next_page_number }}</a>
+        {% elif articles.number == articles.paginator.num_pages %}
+            <a href="?page={{ articles.previous_page_number }}">{{ articles.previous_page_number }}</a>
+            {{ articles.number }}
+        {% else %}
+            <a href="?page={{ articles.previous_page_number }}">{{ articles.previous_page_number }}</a>
+            {{ articles.number }}
+            <a href="?page={{ articles.next_page_number }}">{{ articles.next_page_number }}</a>
+        {% endif %}
+<!--        Кнопка последней-->
+        {% if articles.number != articles.paginator.num_pages and articles.next_page_number != articles.paginator.num_pages %}
+            ...
+            <a href="?page={{ articles.paginator.num_pages }}">{{ articles.paginator.num_pages }}</a>
+        {% endif %}
     </div>
 {% endblock %}

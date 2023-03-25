@@ -1,0 +1,51 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    <h1>Монетка</h1>
+{% endblock %}
+
+
+{% block content %}
+    <div style="margin-left: 500px">
+        {% csrf_token %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Здесь когда-нибудь будет инфа о монетах</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Название</td>
+                    <td>{{ Article.Title }}</td>
+                </tr>
+                <tr>
+                    <td>Фото 1: {{ Article.Image }}</td>
+                    <td>Фото 2: {{ Article.Image_two }}</td>
+                </tr>
+                <tr>
+                    <td>Страна:</td>
+                    <td>{{ Article.Country }}</td>
+                </tr>
+                <tr>
+                    <td>Металл:</td>
+                    <td>{{ Article.Metal }}</td>
+                </tr>
+                <tr>
+                    <td>Год изготовления:</td>
+                    <td>{{ Article.Year }}</td>
+                </tr>
+                <tr>
+                    <td>Номенал:</td>
+                    <td>{{ Article.Value }}</td>
+                </tr>
+                <tr>
+                    <td>Описание:</td>
+                    <td>{{ Article.Text }}</td>
+                </tr>
+            </tbody>
+         </table>
+        <a href="{% url 'moneys-delete' Article.id %}" class="btn btn-danger" style="margin-top: 150px;">Удалить</a>
+        <a href="{% url 'moneys-update' Article.id %}" class="btn btn-info" style="margin-top: 150px">Редактировать</a>
+    </div>
+{% endblock %}
