@@ -1,15 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
+<link rel="stylesheet" href="{% static 'moneys/css/moneys-delete.css' %}">
 <head>
     <meta charset="UTF-8">
     <title>Точно хочешь удалить??☺</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <form action="delete" method="POST">
         {% csrf_token %}
         <p>Хочешь удалить "{{ object }}"?</p>
-        <input type="submit" value="ХОЧУ">
-        <button formaction="" name="cancel">НЕ ХОЧУ</button>
+        <button>ХОЧУ</button>
+        <button formaction="../" name="cancel">НЕ ХОЧУ</button>
     </form>
 </body>
 </html>

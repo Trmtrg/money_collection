@@ -10,16 +10,14 @@ from .models import Article
 def moneys_home(request):
     moneys = Article.objects.all()
 
-    p = Paginator(Article.objects.all(), 3)
+    p = Paginator(moneys, 3)
     page = request.GET.get('page')
-
     try:
         articles = p.page(page)
     except PageNotAnInteger:
         articles = p.page(1)
     except EmptyPage:
         articles = p.page(p.num_pages)
-
     return render(request, 'moneys/moneys_home.html', {'moneys': moneys, 'articles': articles})
 
 
