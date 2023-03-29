@@ -8,7 +8,6 @@
 {% block content %}
     <div class="features">
         <h5>База данных</h5>
-
         {% for el in articles %}
             <div class="alert alert-warning">
                 <p><img class="img-article-left thumb" src="{{ el.Image.url }}"></p>
@@ -17,28 +16,29 @@
             </div>
         {% endfor %}
         <br><br>
-
+            <div id="page_numbers">
 <!--        Кнопка начальной страницы-->
-        {% if articles.number != 1 and articles.previous_page_number != 1 %}
-            <a href="?page=1">1</a>
-            ...
-        {% endif %}
+            {% if articles.number != 1 and articles.previous_page_number != 1 %}
+                <a href="?page=1">1</a>
+                ...
+            {% endif %}
 <!--        Кнопки предыдущей, отображение нынешней и кнопка следующей-->
-        {% if articles.paginator.num_pages == 1 %}
-        {% elif articles.number == 1 %}
+            {% if articles.paginator.num_pages == 1 %}
+            {% elif articles.number == 1 %}
+                <a href="?page={{ articles.next_page_number }}">{{ articles.next_page_number }}</a>
+            {% elif articles.number == articles.paginator.num_pages %}
+                <a href="?page={{ articles.previous_page_number }}">{{ articles.previous_page_number }}</a>
+                {{ articles.number }}
+            {% else %}
+                <a href="?page={{ articles.previous_page_number }}">{{ articles.previous_page_number }}</a>
+                {{ articles.number }}
             <a href="?page={{ articles.next_page_number }}">{{ articles.next_page_number }}</a>
-        {% elif articles.number == articles.paginator.num_pages %}
-            <a href="?page={{ articles.previous_page_number }}">{{ articles.previous_page_number }}</a>
-            {{ articles.number }}
-        {% else %}
-            <a href="?page={{ articles.previous_page_number }}">{{ articles.previous_page_number }}</a>
-            {{ articles.number }}
-            <a href="?page={{ articles.next_page_number }}">{{ articles.next_page_number }}</a>
-        {% endif %}
+            {% endif %}
 <!--        Кнопка последней-->
-        {% if articles.number != articles.paginator.num_pages and articles.next_page_number != articles.paginator.num_pages %}
-            ...
-            <a href="?page={{ articles.paginator.num_pages }}">{{ articles.paginator.num_pages }}</a>
-        {% endif %}
+            {% if articles.number != articles.paginator.num_pages and articles.next_page_number != articles.paginator.num_pages %}
+                ...
+                <a href="?page={{ articles.paginator.num_pages }}">{{ articles.paginator.num_pages }}</a>
+            {% endif %}
+            </div>
     </div>
 {% endblock %}

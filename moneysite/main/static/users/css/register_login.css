@@ -1,0 +1,26 @@
+#window{
+    text-align: center;
+
+}
+
+h2{
+    font-size: 20px;
+}
+
+input{
+    font-size: 15px
+}
+
+button{
+    font-family: cursive;
+     font-size: 12px;
+}
+
+table{
+    position: relative;
+    align: center;
+}
+
+td{
+    text-align: left;
+}

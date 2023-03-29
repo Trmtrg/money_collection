@@ -192,3 +192,15 @@ div a{
 tr {
     margin-left: 20px;
 }
+
+
+body aside ul a li svg{
+    width: 44px
+    height: 44px
+}
+
+#page_numbers{
+    position: relative;
+    bottom: 0;
+    margin-left: 1000px;
+}

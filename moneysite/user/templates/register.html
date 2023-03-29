@@ -1,42 +1,33 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="UTF-8">
-	<link rel="stylesheet" href="{% static 'user/css/login_and_register.css' %}">
-    <title>Регистрация</title>
-</head>
-<body style="background-color: #E1E17F">
-{% block content %}
-<form method="POST" novalidate>
-	<h2 style="font-size: 20px; text-align: center">Регистрация</h2>
-	<div style="text-align: center">
+{% extends 'users/users.html' %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block body %}
+<div id="window">
+	<h2>Регистрация</h2>
+	<form method="POST" novalidate>
 <!--Таблица чтобы ты понял где тэги писать теперь есть css файл в статике этого приложения-->
-		<table align="center">
+		<table>
 			{% for field in form %}
-				{% csrf_token %}
-				<tr>
+			{% csrf_token %}
+			<tr>
 <!--			Название поля-->
-					<td align="left">{{ field.label_tag }}</td>
+				<td>{{ field.label_tag }}</td>
 <!--			Поле с вводом-->
-					<td>{{ field }}</td>
+				<td>{{ field }}</td>
 <!--			Поле ошибки-->
-					{% if field.errors %}
-						<ul class="errorlist">
-							{% for error in field.errors %}
-								<td><li>{{ error }}</li></td>
-							{% endfor %}
-						</ul>
-					{% endif %}
-				</tr>
+				{% if field.errors %}
+				<ul class="errorlist">
+					{% for error in field.errors %}
+					<td><li>{{ error }}</li></td>
+					{% endfor %}
+				</ul>
+				{% endif %}
+			</tr>
 			{% endfor %}
 		</table><br>
-			<button style="font-family: cursive; font-size: 12px">Зарегистрироваться</button>
-			<button formaction="{% url 'login' %}" style="font-family: cursive; font-size: 12px">Страница входа</button>
-
-	</div>
-</form>
-{% endblock content%}
-
-</body>
-</html>
+		<button>Зарегистрироваться</button>
+		<button formaction="{% url 'login' %}">Страница входа</button>
+	</form>
+</div>
+{% endblock %}

@@ -1,33 +1,25 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="ru" xmlns="http://www.w3.org/1999/html">
-<head>
-    <link rel="stylesheet" href="{% static 'user/css/login_and_register.css' %}">
-    <meta charset="UTF-8">
-    <title>Вход</title>
-</head>
-<body>
-    <h3>Вход</h3>
-        {% block content %}
+{% extends 'users/users.html' %}
+
+{% block title %}Вход{% endblock %}
+
+{% block body %}
+<div id="window">
+    <h2>Вход</h2>
     <form method="POST" action="" novalidate>
         {% csrf_token %}
-        <div>
             <p>
                 <input type="text" name="username"
-            placeholder="Имя пользователя" class="form-control"
-            style="font-size: 15px;">
+            placeholder="Имя пользователя" class="form-control">
             </p>
             <p>
                 <input type="password" name="password"
-            placeholder="Пароль" class="form-control"
-            style="font-size: 15px;">
+            placeholder="Пароль" class="form-control">
             </p>
-            <button name="login" style="font-family: cursive; font-size: 12px">Войти</button>
-            <button formaction="{% url 'register' %}" style="font-family: cursive; font-size: 12px">Страница регистрации</button>
+            <button name="login">Войти</button>
+            <button formaction="{% url 'register' %}">Страница регистрации</button>
             {% for message in messages %}
                 <p id="messages">{{ message }}</p>
             {% endfor %}
-        </div>
     </form>
-{% endblock content%}
-</body>
+</div>
+{% endblock %}
