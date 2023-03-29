@@ -1,0 +1,17 @@
+#window{
+    text-align: center;
+    margin-top: 20%;
+}
+
+h2{
+    font-size: 20px;
+}
+
+input{
+    font-size: 15px
+}
+
+button{
+    font-family: cursive;
+     font-size: 12px;
+}

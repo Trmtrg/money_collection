@@ -1,31 +1,25 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>ВХОД</title>
-</head>
-<body style="background-color: #E1E17F">
-    <h3 style="font-size: 20px; text-align: center; margin-top: 250px">Вход</h3>
-        {% block content %}
+{% extends 'users/users.html' %}
+
+{% block title %}Вход{% endblock %}
+
+{% block body %}
+<div id="window">
+    <h2>Вход</h2>
     <form method="POST" action="" novalidate>
         {% csrf_token %}
-        <div style="text-align: center; margin-top: 0px">
             <p>
                 <input type="text" name="username"
-            placeholder="Имя пользователя" class="form-control"
-            style="font-size: 15px;">
+            placeholder="Имя пользователя" class="form-control">
             </p>
             <p>
                 <input type="password" name="password"
-            placeholder="Пароль" class="form-control"
-            style="font-size: 15px;">
+            placeholder="Пароль" class="form-control">
             </p>
-            <input type="submit" name="login" style="font-family: cursive; font-size: 12px">
-            <a href="{% url 'register' %}" style="font-family: cursive">Регистрация</a>
-        </div>
+            <button name="login">Войти</button>
+            <button formaction="{% url 'register' %}">Страница регистрации</button>
+            {% for message in messages %}
+                <p id="messages">{{ message }}</p>
+            {% endfor %}
     </form>
-{% endblock content%}
-    {% for message in messages %}
-        <p id="messages">{{ message }}</p>
-    {% endfor %}
-</body>
+</div>
+{% endblock %}

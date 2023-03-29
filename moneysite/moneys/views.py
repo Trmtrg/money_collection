@@ -1,25 +1,23 @@
+from django.contrib.auth.decorators import permission_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView, UpdateView, DeleteView
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.contrib.auth.decorators import permission_required
 
-from .models import Article
 from .forms import ArticleForm
+from .models import Article
 
 
 def moneys_home(request):
     moneys = Article.objects.all()
 
-    p = Paginator(Article.objects.all(), 3)
+    p = Paginator(moneys, 3)
     page = request.GET.get('page')
-
     try:
         articles = p.page(page)
     except PageNotAnInteger:
         articles = p.page(1)
     except EmptyPage:
         articles = p.page(p.num_pages)
-
     return render(request, 'moneys/moneys_home.html', {'moneys': moneys, 'articles': articles})
 
 
@@ -27,11 +25,12 @@ class NewsUpdateView(UpdateView):
     model = Article
     template_name = 'moneys/create.html'
     form_class = ArticleForm
+    success_url = '..'
 
 
-class NewsDeleteView(DetailView):
+class NewsDeleteView(DeleteView):
     model = Article
-    success_url = '/moneys/moneys_home'
+    success_url = '/moneys/'
     template_name = 'moneys/moneys-delete.html'
 
 

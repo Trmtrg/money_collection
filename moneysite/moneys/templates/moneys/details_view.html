@@ -1,23 +1,49 @@
 {% extends 'main/layout.html' %}
 
-{% block title %}
-    <h1>Монетка</h1>
-{% endblock %}
+{% block title %}Монетка{% endblock %}
 
 
 {% block content %}
     <div style="margin-left: 500px">
-        <h2>Здесь когда-нибудь будет инфа о монетах</h2>
-        <tr>
-             <th scope="col">Название</th> <br>
-             <th scope="col">Фото 1</th>
-             <th scope="col">Фото 2</th> <br>
-             <th scope="col">Страна</th> <br>
-             <th scope="col">Металл</th> <br>
-             <th scope="col">Год выпуска</th> <br>
-             <th scope="col">Номинал</th> <br>
-             <th scope="col">Описание</th> <br>
-         </tr>
+        {% csrf_token %}
+        <h3>Здесь когда-нибудь будет инфа о монетах</h3>
+        <table>
+            <thead>
+                <tr>
+                    <td>Название</td>
+                    <td>{{ Article.Title }}</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Фото 1: <img src="{{ Article.Image.url }}" height="250"></td>
+                    <td>Фото 2: <img src="{{ Article.Image_two.url }}" height="250"></td>
+                </tr>
+                <tr>
+                    <td>Страна:</td>
+                    <td>{{ Article.Country }}</td>
+                </tr>
+                <tr>
+                    <td>Металл:</td>
+                    <td>{{ Article.Metal }}</td>
+                </tr>
+                <tr>
+                    <td>Год изготовления:</td>
+                    <td>{{ Article.Year }}</td>
+                </tr>
+                <tr>
+                    <td>Номенал:</td>
+                    <td>{{ Article.Nominal }}</td>
+                </tr>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Описание:</td>
+                    <td>{{ Article.Text }}</td>
+                </tr>
+            </tfoot>
+         </table>
         <a href="{% url 'moneys-delete' Article.id %}" class="btn btn-danger" style="margin-top: 150px;">Удалить</a>
         <a href="{% url 'moneys-update' Article.id %}" class="btn btn-info" style="margin-top: 150px">Редактировать</a>
     </div>

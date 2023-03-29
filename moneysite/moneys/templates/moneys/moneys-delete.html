@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Точно хочешь удалить??☺</title>
+</head>
+<body>
+    <form action="delete" method="POST">
+        {% csrf_token %}
+        <p>Хочешь удалить "{{ object }}"?</p>
+        <button>ХОЧУ</button>
+        <button formaction="../" name="cancel">НЕ ХОЧУ</button>
+    </form>
+</body>
+</html>
