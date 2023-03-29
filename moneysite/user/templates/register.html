@@ -5,29 +5,30 @@
 {% block body %}
 <div id="window">
 	<h2>Регистрация</h2>
-	<form method="POST" novalidate>
-<!--Таблица чтобы ты понял где тэги писать теперь есть css файл в статике этого приложения-->
-		<table>
-			{% for field in form %}
-			{% csrf_token %}
-			<tr>
-<!--			Название поля-->
-				<td>{{ field.label_tag }}</td>
-<!--			Поле с вводом-->
-				<td>{{ field }}</td>
-<!--			Поле ошибки-->
-				{% if field.errors %}
-				<ul class="errorlist">
-					{% for error in field.errors %}
-					<td><li>{{ error }}</li></td>
-					{% endfor %}
-				</ul>
-				{% endif %}
-			</tr>
-			{% endfor %}
-		</table><br>
-		<button>Зарегистрироваться</button>
-		<button formaction="{% url 'login' %}">Страница входа</button>
+	    <form method="POST" novalidate>
+        {% csrf_token %}
+            <p>
+                <input type="text" name="username"
+            placeholder="Имя пользователя" class="form-control">
+            </p>
+            <p>
+                <input type="text" name="email"
+            placeholder="Адрес электронной почты" class="form-control">
+            </p>
+            <p>
+                <input type="password" name="password1"
+            placeholder="Введите пароль" class="form-control">
+            </p>
+            <p>
+                <input type="password" name="password2"
+            placeholder="Повторите пароль" class="form-control">
+            </p>
+            <button>Зарегистрироваться</button>
+            <button formaction="{% url 'login' %}">Страница входа</button>
+            {% for message in messages %}
+                <p id="messages">{{ message }}</p>
+            {% endfor %}
+
 	</form>
 </div>
 {% endblock %}
