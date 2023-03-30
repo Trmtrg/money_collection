@@ -130,7 +130,8 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'main', 'static', 'main/'),
-    os.path.join(BASE_DIR, 'main', 'static', 'users/'),
+    os.path.join(BASE_DIR, 'user', 'static', 'users/'),
+    os.path.join(BASE_DIR, 'moneys', 'static', 'moneys/'),
 ]
 
 # Default primary key field type
