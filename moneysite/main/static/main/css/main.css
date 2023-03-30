@@ -1,6 +1,7 @@
 /* То, что позади всего */
 body{
-    background-image: url(../images/2.jpg);
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
+    url(../images/SXfx.gif);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -10,22 +11,23 @@ body{
 aside {
     position: relative;
     float: left;
-    background: #dcdcdc;
+    background: #4CE3F8;
     width: 18%;
     padding: 1%;
     height: 100vh;
     color: #fff;
-    border-right: 4px solid #c0c0c0;
+    border-right: 1px solid #7FE1C5;
     display: block;
+    filter: brightness(95%);
 }
 
 /* Надпись "Коллекция монет" */
 aside span {
-    font-size: 26px;
+    font-size: 25px;
     color: #141619;
-    font-family: cursive;
-    margin-left: 17px;
+    font-family: 'Georgia', cursive;
     text-align: center;
+    margin-left: 31px;
 }
 
 /* Надпись "Навигация" */
@@ -33,11 +35,11 @@ aside h3 {
     background: -webkit-linear-gradient(#ffb300, #141619);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: cursive;
+    font-family: 'Georgia', serif;
     font-size: 40px;
     color: #000;
     margin-top: 2px;
-    margin-left: 7px;
+    text-align: center;
 }
 
 /* Ссылки */
@@ -164,7 +166,7 @@ div{
 
 .alert-warning{
     --bs-alert-color: #000;
-    --bs-alert-bg: #E9E985;
+    --bs-alert-bg: #5AD4DA;
     margin-left: -30px;
     margin-top: 20px;
 }
@@ -191,6 +193,7 @@ div a{
 
 .btn-warning {
     margin-top: 25px;
+    --bs-btn-bg: #D7E98D;
 }
 
 tr {
@@ -206,4 +209,28 @@ body aside ul a li svg{
 #page_numbers{
     position: relative;
     bottom: 0;
+}
+
+aside ul span{
+    margin-left: 12px;
+}
+
+td {
+    font-size: 20px;
+    font-family: Georgia, serif;
+}
+
+table{
+    margin-left: -28%;
+    margin-top: 5%;
+    width: 115%;
+    line-height: 50px;
+}
+
+#btn1{
+    margin-top: 100px;
+}
+
+#btn2{
+    margin-top: 100px;
 }

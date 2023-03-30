@@ -32,7 +32,7 @@
                     <td>{{ Article.Year }}</td>
                 </tr>
                 <tr>
-                    <td>Номенал:</td>
+                    <td>Номинал:</td>
                     <td>{{ Article.Nominal }}</td>
                 </tr>
 
@@ -44,7 +44,7 @@
                 </tr>
             </tfoot>
          </table>
-        <a href="{% url 'moneys-delete' Article.id %}" class="btn btn-danger" style="margin-top: 150px;">Удалить</a>
-        <a href="{% url 'moneys-update' Article.id %}" class="btn btn-info" style="margin-top: 150px">Редактировать</a>
+        <a href="{% url 'moneys-delete' Article.id %}" class="btn btn-danger" id="btn1">Удалить</a>
+        <a href="{% url 'moneys-update' Article.id %}" class="btn btn-info" id="btn2">Редактировать</a>
     </div>
 {% endblock %}

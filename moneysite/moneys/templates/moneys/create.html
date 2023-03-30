@@ -4,7 +4,7 @@
 
 {% block content %}
     <div class="features">
-        <h1>Форма добавления записей</h1>
+        <h5>Форма добавления записей</h5>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.Title }}<br>
