@@ -27,7 +27,7 @@ aside span {
     color: #141619;
     font-family: 'Georgia', cursive;
     text-align: center;
-    margin-left: 31px;
+    margin-left: 14px;
 }
 
 /* Надпись "Навигация" */
@@ -40,6 +40,7 @@ aside h3 {
     color: #000;
     margin-top: 2px;
     text-align: center;
+    margin-left: -10px;
 }
 
 /* Ссылки */
@@ -50,7 +51,7 @@ aside li {
     list-style: none;
     outline: none;
     display: block;
-    margin-left: -45px;
+    margin-left: -50px;
     margin-top: 30px;
     text-align: center;
 }
@@ -212,7 +213,8 @@ body aside ul a li svg{
 }
 
 aside ul span{
-    margin-left: 12px;
+    margin-left: 2px;
+    font-family: Georgia, serif;
 }
 
 td {

@@ -8,7 +8,7 @@ body {
 .center{
     display: table;
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     margin-left: -200px;
 }
@@ -30,6 +30,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
     padding: 2%;
+    border: 1px solid black;
 }
 
 h2{
@@ -49,18 +50,15 @@ input{
 
 button{
     font-family: cursive;
-    font-size: 12px;
     padding: 2 21px;
     background: #fff;
-    border-radius: 5px;
-    outline: none;
-    border: none;
     cursor: pointer;
     text-align: center;
     transition: all 0.2s linear;
     margin: 7% auto;
     letter-spacing: 0.05em;
     transform: translateX(-2px);
+    border: 1px solid black;
 }
 
 p{
