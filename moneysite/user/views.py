@@ -19,7 +19,7 @@ def register_page(request):
             messages.info(request, 'Что-то не так')
 
     context = {'form': form}
-    return render(request, 'register.html', context)
+    return render(request, 'users/register.html', context)
 
 
 def login_page(request):
@@ -36,7 +36,7 @@ def login_page(request):
         else:
             messages.info(request, 'Имя пользователя или пароль введены неправильно')
     context = {}
-    return render(request, 'login.html', context)
+    return render(request, 'users/login.html', context)
 
 
 def logout_user(request):

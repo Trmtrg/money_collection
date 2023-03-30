@@ -5,15 +5,29 @@ body {
     background-repeat: no-repeat;
 }
 
-#window{
-    text-align: center;
-    margin-top: 15%;
-    width: 400px;
-    margin-left: 550px;
+.center{
+    display: table;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+}
+
+#login{
+    margin-top: -148px;
+}
+
+#register{
+    margin-top: -190.795px;
+}
+
+.window{
+    display: table-cell;
     background-image: linear-gradient(-222.5deg, #FFE6FA 50%, #E3FDF5 30%);
-    height: auto;
+    width: 400px;
+    height: 280px;
+    text-align: center;
     border-radius: 5px;
-    margin: 12% auto;
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
     padding: 2%;
 }
