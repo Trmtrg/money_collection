@@ -1,16 +1,30 @@
-{% extends 'main/layout.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'moneys/css/moneys-delete.css' %}">
     <title>Точно хочешь удалить??☺</title>
 </head>
 <body>
     <form action="delete" method="POST">
         {% csrf_token %}
-        <p>Хочешь удалить "{{ object }}"?</p>
-        <button>ХОЧУ</button>
-        <button formaction="../" name="cancel">НЕ ХОЧУ</button>
+        <div class="table">
+            <div class="row">
+                <div class="cell">
+                    <p>Хочешь удалить </p>
+                    <p>"{{ object }}"?</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell">
+                    <a><button>ХОЧУ</button></a>
+                    <a><button formaction="../" name="cancel">НЕ ХОЧУ</button></a>
+                </div>
+            </div>
+        </div>
     </form>
 </body>
 </html>
+
+
