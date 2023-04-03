@@ -1,10 +1,11 @@
 /* То, что позади всего */
 body{
-    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(120,120,120,0.5)),
     url(../images/SXfx.gif);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    filter: brightness(85%);
 }
 
 /* Боковая панель */
@@ -18,7 +19,7 @@ aside {
     color: #fff;
     border-right: 1px solid #7FE1C5;
     display: block;
-    filter: brightness(95%);
+    filter: brightness(97%);
 }
 
 /* Надпись "Коллекция монет" */
