@@ -6,7 +6,6 @@
 {% block content %}
     <div style="margin-left: 500px">
         {% csrf_token %}
-        <h3>Здесь когда-нибудь будет инфа о монетах</h3>
         <table>
             <thead>
                 <tr>
@@ -16,8 +15,8 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Фото 1: <img src="{{ Article.Image.url }}" height="250"></td>
-                    <td>Фото 2: <img src="{{ Article.Image_two.url }}" height="250"></td>
+                    <td><img src="{{ Article.Image.url }}" height="250"></td>
+                    <td><img src="{{ Article.Image_two.url }}" height="250"></td>
                 </tr>
                 <tr>
                     <td>Страна:</td>
@@ -44,7 +43,9 @@
                 </tr>
             </tfoot>
          </table>
-        <a href="{% url 'moneys-delete' Article.id %}" class="btn btn-danger" id="btn1">Удалить</a>
-        <a href="{% url 'moneys-update' Article.id %}" class="btn btn-info" id="btn2">Редактировать</a>
+        {% if request.user.is_superuser %}
+            <a href="{% url 'moneys-delete' Article.id %}" class="btn btn-danger" id="btn1">Удалить</a>
+            <a href="{% url 'moneys-update' Article.id %}" class="btn btn-info" id="btn2">Редактировать</a>
+        {% endif %}
     </div>
 {% endblock %}
