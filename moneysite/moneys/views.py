@@ -12,18 +12,22 @@ def moneys_home(request):
 
     p = Paginator(moneys, 3)
     page = request.GET.get('page')
+# Работает
     try:
         articles = p.page(page)
     except PageNotAnInteger:
         articles = p.page(1)
     except EmptyPage:
         articles = p.page(p.num_pages)
+
+# Не работает
     # if not PageNotAnInteger:
     #     articles = p.page(1)
     # elif not EmptyPage:
     #     articles = p.page(p.num_pages)
     # else:
     #     articles = p.page(page)
+
     return render(request, 'moneys/moneys_home.html', {'moneys': moneys, 'articles': articles})
 
 
